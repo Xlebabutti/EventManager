@@ -2,17 +2,27 @@ import { useDispatch, useSelector } from "react-redux"
 import { setTheme } from "./Slice"
 import './_themeSwitcher.scss'
 import { RootState } from "../../redux/store"
-
+import { useCookies } from "react-cookie"
+import { useEffect } from "react"
 
 
 const ThemeSwitcher = () => {
     const dispatch = useDispatch()
     const theme = useSelector((state: RootState) => state.theme.data)
+    const [cookies, setCookie] = useCookies(['theme'])
 
-    const togglleTheme = () => {
-        console.log('before', theme)
+    useEffect(() => {
+        if(cookies) {
+            const themeCookie = cookies.theme
+            if(themeCookie) {
+                setTheme(themeCookie)
+            }
+        }
+    }, [cookies])
+
+    const togglleTheme = () => { 
         dispatch(setTheme(theme === 'light' ? 'dark' : 'light'))
-        console.log('after', theme)
+        setCookie('theme', theme === 'light' ? 'dark' : 'light')
     }
 
     return (
