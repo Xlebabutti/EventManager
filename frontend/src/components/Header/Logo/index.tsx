@@ -1,4 +1,4 @@
-import './Logo.scss'
+import './_logo.scss'
 
 
 const Logo = () => {
