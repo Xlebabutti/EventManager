@@ -16,13 +16,16 @@ const ThemeSwitcher = () => {
             const themeCookie = cookies.theme
             if(themeCookie) {
                 setTheme(themeCookie)
+            } else {
+                setCookie('theme', 'light')
             }
         }
     }, [cookies])
 
     const togglleTheme = () => { 
-        dispatch(setTheme(theme === 'light' ? 'dark' : 'light'))
-        setCookie('theme', theme === 'light' ? 'dark' : 'light')
+        const newTheme = theme === 'light' ? 'dark' : 'light'
+        dispatch(setTheme(newTheme))
+        setCookie('theme', newTheme)
     }
 
     return (
