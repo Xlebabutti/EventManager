@@ -1,3 +1,18 @@
+$onyx: #404040;
+$cultured: #b4b4b4;
+
+// define themes
+html[data-theme="light"] {
+  --color-text: #{$onyx};
+  --color-background: #{$cultured};
+}
+
+html[data-theme="dark"] {
+  --color-text: #{$cultured};
+  --color-background: #{$onyx};
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -28,6 +43,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  color: var(--color-text);
+  background: var(--color-background);
 }
 
 h1 {
@@ -69,10 +87,3 @@ button:focus-visible {
 
 
 
-.main {
-  background-color: rgb(70, 70, 70);
-}
-
-.main.dark {
-  background-color: blue;
-}
