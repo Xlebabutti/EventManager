@@ -3,9 +3,9 @@ import './_logo.scss'
 
 const Logo = () => {
     return (
-        <div>
+        <header>
             Logo
-        </div>
+        </header>
     )
 }
 

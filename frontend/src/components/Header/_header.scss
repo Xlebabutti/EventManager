@@ -1,5 +1,11 @@
+@import '../../scss/base/variables';
+
+
 .header { 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    height: $header-hight;
+    background: $header-background;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 1px 5px black;
 }
