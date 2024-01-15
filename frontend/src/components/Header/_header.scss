@@ -4,13 +4,8 @@
 .header { 
     height: $header-hight;
     background: $header-background;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 1px 5px black;
     display: flex;
-    width: calc(100% - 300px);
+    width: 100%;
     align-items: center;
     justify-content: space-around;
 }
