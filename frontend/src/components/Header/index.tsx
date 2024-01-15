@@ -6,6 +6,7 @@ const Header = () => {
     return (
         <div className='header'>
             <div className="header-wrapper">
+
                 <div className="left">
                     <div className="header__search">
 
@@ -14,7 +15,7 @@ const Header = () => {
 
                 <div className="right">
                     <div className="header__lang-switcher">
-                        <LangSwitcher />
+                        {/* <LangSwitcher /> */}
                     </div>
                     <div className="header__notifications">
                         {/* <Notifications /> */}
@@ -29,7 +30,7 @@ const Header = () => {
                         <Profile />
                     </div>
                 </div>
-
+                
             </div>
         </div>
     )
