@@ -11,4 +11,6 @@
     box-shadow: 0 1px 5px black;
     display: flex;
     width: calc(100% - 300px);
+    align-items: center;
+    justify-content: space-around;
 }

@@ -3,13 +3,10 @@ import './_logo.scss'
 
 const Logo = () => {
     return (
-        <header>
+        <div>
             Logo
-        </header>
+        </div>
     )
 }
 
 export default Logo
-
-// TODO 
-// FIXME 
