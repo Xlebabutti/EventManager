@@ -4,7 +4,7 @@ import Profile from './Profile'
 
 const Header = () => {
     return (
-        <div className='header'>
+        <header className='header'>
             <div className="header-wrapper">
 
                 <div className="left">
@@ -32,7 +32,7 @@ const Header = () => {
                 </div>
                 
             </div>
-        </div>
+        </header>
     )
 }
 
