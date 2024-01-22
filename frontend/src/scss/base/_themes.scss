@@ -6,9 +6,8 @@ html[data-theme="dark"] {
 
   --primary-color: #{$primary-500};
   --secondary-color: #{$neutral-500};
-
-  --card-background-color: #{$dark-overlay-8};
-  --card-border-color: #{$neutral-700};
+  
+  --header-background-color: #{$neutral-900};
 }
 
 html[data-theme="light"] {
@@ -18,6 +17,5 @@ html[data-theme="light"] {
   --primary-color: #{$blue-1};
   --secondary-color: #{$grey-3};
 
-  --card-background-color: #{$white-1};
-  --card-border-color: #{$grey-2};
+  --header-background-color: #{$white-2};
 }

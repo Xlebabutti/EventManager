@@ -24,7 +24,7 @@ const Sidebar = () => {
         <div className={`sidebar ${isOpen ? 'sidebar-open' : 'sidebar-close'}`}>
             <div className="sidebar-wrapper">
                 <button onClick={handleToggleSidebar}>
-                    {isOpen ? <NavigateNext /> : <NavigateBefore />}
+                    {!isOpen ? <NavigateNext /> : <NavigateBefore />}
                 </button>
                 {isOpen ? (
                     <div className="sidebar__list">
