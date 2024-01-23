@@ -5,6 +5,7 @@ import { RootState } from '../../redux/store';
 import { toggleSidebar } from '../../redux/actions/sidebarSlice';
 import { useEffect } from 'react';
 import { Delete, NavigateBefore, NavigateNext, PhoneAndroid, Search } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 
 
@@ -23,44 +24,73 @@ const Sidebar = () => {
     return (
         <div className={`sidebar ${isOpen ? 'sidebar-open' : 'sidebar-close'}`}>
             <div className="sidebar-wrapper">
-                <button onClick={handleToggleSidebar}>
-                    {!isOpen ? <NavigateNext /> : <NavigateBefore />}
-                </button>
-                {isOpen ? (
-                    <div className="sidebar__list">
-                        <a href="">
-                            <Logo />
-                        </a>
-                        <span>OVERVIEW</span>
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                        </ul>
-                    </div>
-                ) : (
-                    <div className="sidebar__list">
-                        <div className="sidebar__lik">
-                            <div className="sidebar__icon">
-                                <PhoneAndroid />
-                            </div>
-                        </div>
-                        <div className="sidebar__lik">
-                            <div className="sidebar__icon">
-                                <Search />
-                            </div>
-                        </div>
-                        <div className="sidebar__lik">
-                            <div className="sidebar__icon">
-                                <Delete />
-                            </div>
-
-                        </div>
-                    </div>
-                )}
+                <div className="sidebar-header">
+                    <button onClick={handleToggleSidebar}>
+                        {!isOpen ? <NavigateNext /> : <NavigateBefore />}
+                    </button>
+                    <a href="">
+                        <Logo />
+                    </a>
+                    <span>OVERVIEW</span>
+                </div>
+                <div className="sidebar-content">
+                    {isOpen ? (
+                        <nav className="sidebar__menu">
+                            <ul>
+                                <li className="sidebar__menu-item">
+                                    <Link to={'/user'}>
+                                        <span className="sidebar__menu-icon">
+                                            <PhoneAndroid />
+                                        </span>
+                                        <span className='sidebar__menu-title'>Phone</span>
+                                    </Link>
+                                </li>
+                                <li className="sidebar__menu-item">
+                                    <Link to={''}>
+                                        <span className="sidebar__menu-icon">
+                                            <Search />
+                                        </span>
+                                        <span className='sidebar__menu-title'>Search</span>
+                                    </Link>
+                                </li>
+                                <li className="sidebar__menu-item">
+                                    <a href="">
+                                        <span className="sidebar__menu-icon">
+                                            <Delete />
+                                        </span>
+                                        <span className='sidebar__menu-title'>Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    ) : (
+                        <nav className="sidebar__menu">
+                            <ul>
+                                <li className="sidebar__menu-item">
+                                    <a href="">
+                                        <span className="sidebar__menu-icon">
+                                            <PhoneAndroid />
+                                        </span>
+                                    </a>
+                                </li>
+                                <li className="sidebar__menu-item">
+                                    <a href="">
+                                        <span className="sidebar__menu-icon">
+                                            <Search />
+                                        </span>
+                                    </a>
+                                </li>
+                                <li className="sidebar__menu-item">
+                                    <a href="">
+                                        <span className="sidebar__menu-icon">
+                                            <Delete />
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    )}
+                </div>
             </div>
         </div>
     )
