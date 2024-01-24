@@ -1,9 +1,20 @@
 import { Contacts, Language, Notifications, Search, Settings } from '@mui/icons-material'
 import './_header.scss'
 import Profile from './Profile'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
+import { toggleSettings } from '../../redux/actions/settingsSlice'
+
 
 
 const Header = () => {
+    const dispatch = useDispatch()
+    const settingsState = useSelector(((state: RootState) => state.settings.isOpen))
+    console.log(settingsState)
+
+    const handleToggleSettings = () => {
+        dispatch(toggleSettings())
+    } 
     return (
         <header className='header'>
             <div className="header-wrapper">
@@ -34,7 +45,7 @@ const Header = () => {
                     </div>
 
                     <div className="header__icon">
-                        <div className="header__settings">
+                        <div className="header__settings" onClick={handleToggleSettings}>
                             <Settings />
                         </div>
                     </div>
