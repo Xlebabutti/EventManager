@@ -9,12 +9,11 @@ import { toggleSettings } from '../../redux/actions/settingsSlice'
 
 const Header = () => {
     const dispatch = useDispatch()
-    const settingsState = useSelector(((state: RootState) => state.settings.isOpen))
-    console.log(settingsState)
 
     const handleToggleSettings = () => {
         dispatch(toggleSettings())
-    } 
+    }
+
     return (
         <header className='header'>
             <div className="header-wrapper">
