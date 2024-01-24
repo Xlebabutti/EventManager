@@ -25,13 +25,12 @@ const Sidebar = () => {
         <div className={`sidebar ${isOpen ? 'sidebar-open' : 'sidebar-close'}`}>
             <div className="sidebar-wrapper">
                 <div className="sidebar-header">
-                    <button onClick={handleToggleSidebar}>
-                        {!isOpen ? <NavigateNext /> : <NavigateBefore />}
-                    </button>
                     <a href="">
                         <Logo />
                     </a>
-                    <span>OVERVIEW</span>
+                    <button onClick={handleToggleSidebar}>
+                        {!isOpen ? <NavigateNext /> : <NavigateBefore />}
+                    </button>
                 </div>
                 <div className="sidebar-content">
                     {isOpen ? (
@@ -46,7 +45,7 @@ const Sidebar = () => {
                                     </Link>
                                 </li>
                                 <li className="sidebar__menu-item">
-                                    <Link to={''}>
+                                    <Link to={'/Searc'}>
                                         <span className="sidebar__menu-icon">
                                             <Search />
                                         </span>
@@ -54,12 +53,12 @@ const Sidebar = () => {
                                     </Link>
                                 </li>
                                 <li className="sidebar__menu-item">
-                                    <a href="">
+                                    <Link to={'/Delete'}>
                                         <span className="sidebar__menu-icon">
                                             <Delete />
                                         </span>
                                         <span className='sidebar__menu-title'>Delete</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </nav>
@@ -67,25 +66,25 @@ const Sidebar = () => {
                         <nav className="sidebar__menu">
                             <ul>
                                 <li className="sidebar__menu-item">
-                                    <a href="">
+                                    <Link to={'/Phone'}>
                                         <span className="sidebar__menu-icon">
                                             <PhoneAndroid />
                                         </span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="sidebar__menu-item">
-                                    <a href="">
+                                    <Link to={'/Search'}>
                                         <span className="sidebar__menu-icon">
                                             <Search />
                                         </span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="sidebar__menu-item">
-                                    <a href="">
+                                    <Link to={'/Delete'}>
                                         <span className="sidebar__menu-icon">
                                             <Delete />
                                         </span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </nav>
