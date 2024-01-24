@@ -9,7 +9,6 @@ import Settings from "../Header/Settings"
 
 const Layout = () => {
     // TODO: если добавлять элемент черезе стейт, то нет анимации!!!
-    
     // const settingsState = useSelector(((state: RootState) => state.settings.isOpen))
 
     return (

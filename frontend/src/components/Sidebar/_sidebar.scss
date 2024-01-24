@@ -1,5 +1,5 @@
 .sidebar {
-    background-color: #FFFFFF;
+    background: var(--header-background-color);
     transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
     height: 100%;
     border-right: 1px dashed rgba(145, 158, 171, 0.2);
